@@ -1,3 +1,13 @@
 @Library('my-shared-library') _
 
-pipelineTest()
+pipeline {
+    agent any
+    
+    stages {
+        stage('Install Nginx') {
+            steps {
+                installNginx()
+            }
+        }
+    }
+}
